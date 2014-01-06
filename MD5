@@ -1,0 +1,9 @@
+b612a1adeeb0dddab2291562268f5e06 *DESCRIPTION
+82e9bd089f39203348a2d56b9673858e *NAMESPACE
+7c8e87e91ffce06c7e364d0a5edf6569 *R/LHSdesign.r
+57ffbdf4675b94568438c74fe624cbe6 *R/MCdesign.R
+7b70a65c900d89926fffa3ed62260f75 *R/sensitivityMet.R
+58d5fb4dcc1f201f1bc5b8e68e2355c2 *man/ATmet-package.Rd
+0e5d1597677ecec826478b464ed42330 *man/LHSdesign.Rd
+bdf4743aee369786aef08c50670cf212 *man/MCdesign.Rd
+1e099f2716ae5279be236471f54926c4 *man/sensitivityMet.Rd

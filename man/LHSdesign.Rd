@@ -68,15 +68,13 @@ Latin hypercube sampling for metrology applications
 }
 
 \examples{
-   
+\donttest{   
   N<- 100
   k<- 4
   x<- list("X1","X2","X3","X4")
   distrib<- list("norm","norm","unif","t.scaled")
   distrib.pars<- list(list(0,2),list(0,1),list(20,150),list(2,0,1))
   LHSdesign(N,k,distrib,distrib.pars,x)
+  }
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+

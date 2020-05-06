@@ -1,2 +1,3 @@
 exportPattern("^[[:alpha:]]+")
 import(DiceDesign, lhs, metRology, msm, sensitivity)
+importFrom("stats","qnorm", "qt", "qunif", "rnorm", "rt", "runif")

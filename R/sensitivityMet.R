@@ -30,7 +30,7 @@ sensitivityMet=function(model,x,y,nboot, method, conf)
     if (length(y)!=dim(x)[1]) {
       stop("The length of the output quantity should be the same as the number of rows of the input quantities")  
     }
-    SRRC <- src(x,y,rank=TRUE,nboot=nboot,conf)
+    SRRC <- src(x,y,rank=TRUE,logistic=FALSE,nboot=nboot,conf)
     method <- "SRRC"
     S <- list( model=model, x=x, y=y, method=method, S1=SRRC$SRRC)
     return(S)

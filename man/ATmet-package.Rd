@@ -2,53 +2,62 @@
 \alias{ATmet-package}
 \alias{ATmet}
 \docType{package}
+
 \title{
 Advanced Tools for Metrology
 }
+
 \description{
-This package provides functions for smart sampling and sensitivity analysis for metrology applications, including computationally expensive problems.
+Several functions for smart sampling and sensitivity analysis for metrology applications, including computationally expensive problems.
 }
+
 \details{
-\tabular{ll}{
-Package: \tab ATmet\cr
-Type: \tab Package\cr
-Version: \tab 1.2\cr
-Date: \tab 2014-01-06\cr
-License: \tab GPL-3 \cr
-}
+The \pkg{ATmet} package implements sensitivity analysis functions for metrology applications
 
 The function for smart sampling implements the Latin Hypercube Sampling (LHS) method using the \option{lhs} package.
 The functions for sensitivity analysis implement the Standardized Rank Regression Coefficient (SRRC) and the Sobol' sensitivity indices using the \option{sensitivity} package. These methods can be used for computationally expensive problems.
 
 }
-\note{This work is part of a joint research project within the European Metrology Research Programme (EMRP) called "Novel Mathematical and Statistical Approaches to Uncertainty Evaluation". The EMRP is jointly funded by the EMRP participating countries within EURAMET and the European Union.}
 
-\author{
-Severine Demeyer and Alexandre Allard
-
-Maintainer: \email{severine.demeyer@lne.fr} \email{alexandre.allard@lne.fr}
-
+\note{This work is part of a joint research project within the European Metrology Research Programme (EMRP) called "Novel Mathematical and Statistical Approaches to Uncertainty Evaluation". The EMRP is jointly funded by the EMRP participating countries within EURAMET and the European Union.
 }
 
-\keyword{ latin hypercube sampling, srrc, sobol }
+\author{
+Severine Demeyer and Alexandre Allard, with contributions from Bertrand Iooss
+
+Maintainer: Alexandre Allard \email{alexandre.allard@lne.fr}
+}
+
+\references{
+I.M. Sobol, S. Tarantola, D. Gatelli, S.S. Kucherenko and W. Mauntz, 2007, \emph{Estimating the approximation errors when fixing unessential factors in global sensitivity analysis}, Reliability Engineering and System Safety, 92, 957-960.
+
+A. Saltelli, P. Annoni, I. Azzini, F. Campolongo, M. Ratto and S. Tarantola, 2010, \emph{Variance based sensitivity analysis of model output. Design and estimator for the total sensitivity index}, Computer Physics Communications 181, 259-270.
+
+R. Stocki, 2005, \emph{A method to improve design reliability using optimal Latin hypercube sampling}, Computer Assisted Mechanics and Engineering Sciences 12, 87-105.
+}
+
 \seealso{
 
  \code{\link{lhs}} 
  
  \code{\link{sensitivity}}
 }
+
 \examples{
+
 # **********************
 # Smart sampling method
 # **********************
 
+\donttest{
 N<- 100
   k<- 4
   x<- list("X1","X2","X3","X4")
   distrib<- list("norm","norm","unif","t.scaled")
   distrib.pars<- list(list(0,2),list(0,1),list(20,150),list(2,0,1))
   LHSdesign(N,k,distrib,distrib.pars,x)
-  
+}
+
 # **********************
 # Sensitivity analysis
 # **********************
@@ -92,5 +101,4 @@ S_Sobol$SI=tell(x=S_Sobol$SI,y=YDesign)
 S_Sobol$SI$S
 #Total order indices
 S_Sobol$SI$T 
-  
 }
